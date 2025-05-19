@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Block Breaker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Block Breaker</h1>
+      <div class="game-stats">
+        <div class="score">Score: <span id="score">0</span></div>
+        <div class="lives">Lives: <span id="lives">3</span></div>
+        <div class="difficulty-info">
+          Difficulty: <span id="difficultyInfo">MEDIUM</span>
+        </div>
+        <div class="power-up-indicator" id="blasterIndicator">
+          BLASTERS ACTIVE!
+        </div>
+        <div class="power-up-indicator" id="smallIndicator">SMALL PADDLE!</div>
+        <div class="power-up-indicator" id="bigIndicator">BIG PADDLE!</div>
+      </div>
+      <canvas id="gameCanvas" width="800" height="600"></canvas>
+      <div class="controls">
+        <div class="difficulty-selector">
+          <label for="difficulty">Difficulty:</label>
+          <select id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium" selected>Medium</option>
+            <option value="hard">Hard</option>
+            <option value="master">Master</option>
+          </select>
+        </div>
+        <button id="startButton">Start Game</button>
+        <button id="soundToggle">Sound: ON</button>
+        <p class="instructions">
+          Use left and right arrow keys or A/D to move the paddle
+        </p>
+
+        <!-- Audio elements for sound effects -->
+        <audio
+          id="paddleHitSound"
+          src="sounds/paddle-hit.m4a"
+          preload="auto"
+        ></audio>
+        <audio
+          id="blockCrackSound"
+          src="sounds/block-crack.m4a"
+          preload="auto"
+        ></audio>
+        <audio
+          id="blockBreakSound"
+          src="sounds/block-break.m4a"
+          preload="auto"
+        ></audio>
+        <audio
+          id="laserShootSound"
+          src="sounds/laser-shoot.m4a"
+          preload="auto"
+        ></audio>
+        <audio
+          id="paddleShrinkSound"
+          src="sounds/paddle-shrink.m4a"
+          preload="auto"
+        ></audio>
+        <audio
+          id="paddleGrowSound"
+          src="sounds/paddle-grow.m4a"
+          preload="auto"
+        ></audio>
+        <audio
+          id="gameStartSound"
+          src="sounds/game-start.m4a"
+          preload="auto"
+        ></audio>
+        <audio
+          id="gameOverSound"
+          src="sounds/game-over.m4a"
+          preload="auto"
+        ></audio>
+        <audio
+          id="lifeLostSound"
+          src="sounds/life-lost.m4a"
+          preload="auto"
+        ></audio>
+        <audio
+          id="levelWonSound"
+          src="sounds/level-won.m4a"
+          preload="auto"
+        ></audio>
+        <audio
+          id="gotBlastersSound"
+          src="sounds/got-blasters.m4a"
+          preload="auto"
+        ></audio>
+      </div>
+    </div>
+    <script src="game.js"></script>
+  </body>
+</html>
